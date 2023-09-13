@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+    DocumentRoot /var/www/html
+    ServerName oasistest.com
+    ServerAlias www.oasistest.com
+
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    <FilesMatch \.php$>
+        SetHandler "proxy:unix:/var/run/php/php7.4-fpm.sock|fcgi://localhost/"
+    </FilesMatch>
+
+    ErrorLog ${APACHE_LOG_DIR}/myphpsite_error.log
+    CustomLog ${APACHE_LOG_DIR}/myphpsite_access.log combined
+</VirtualHost>

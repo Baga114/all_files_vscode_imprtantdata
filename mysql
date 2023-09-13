@@ -1,0 +1,28 @@
+create database ticket_db;
+CREATE USER 'ticket_u'@'localhost' IDENTIFIED BY 'StrongPassword!123';
+GRANT ALL PRIVILEGES ON ticket_db.* TO 'ticket_u'@'localhost';
+
+paterson_db
+
+mysql -u root -p paterson_db < paterson_db_dump.sql
+
+UN: Root
+PW: djb@cjn1287gf
+
+define( 'DB_NAME', 'patersonwp_db' );
+
+/** Database username */
+define( 'DB_USER', 'patersonwp_u' );
+
+/** Database password */
+define( 'DB_PASSWORD', '.C52or(2G_cr' );
+
+/** Database hostname */
+define( 'DB_HOST', 'localhost' );
+
+FLUSH PRIVILEGES;
+SELECT * from wp_options WHERE option_name = 'home' OR option_name = 'siteurl';
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Sdfggbre#fvd@f';
+
+UPDATE wp_options SET option_value = "http://paterson.test" WHERE option_name = 'home' OR option_name = 'siteurl';

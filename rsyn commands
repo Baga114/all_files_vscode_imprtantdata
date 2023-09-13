@@ -1,0 +1,13 @@
+rsync -ravzh --ignore-existing --exclude '.gitignore' --exclude '.git' ../myhuddleapi.bkp/ .
+linux command
+netstat -tupln 
+ps aux
+how to check ssh connection is enable or not
+use command telnet <ip>22 will work
+curl 
+
+rsync -ravzh /root/rpmpkgs root@192.168.0.141:/root/  (for incremental backup)
+scp -r /root/helloscp ishu@192.168.1.8:/home/ishu
+useradd -G www-data iain
+chown -R www-data:www-data /var/www/example.com
+chmod 775 /var/www

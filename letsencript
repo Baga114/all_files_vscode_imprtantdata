@@ -1,0 +1,17 @@
+sudo apt-get -y install certbot python3-certbot-apache
+
+sudo certbot
+========
+sudo certbot --nginx -d entre the name example is given below 
+sudo certbot --nginx -d 
+========
+
+ 
+sudo apt install certbot
+sudo apt install python3-certbot-nginx
+sudo certbot --nginx -d listmonk.codeshastra.com --register-unsafely-without-email
+   
+   
+sudo apt install certbot
+sudo apt install python3-certbot-nginx
+sudo certbot --nginx -d listmonk.unikaksha.com --register-unsafely-without-email

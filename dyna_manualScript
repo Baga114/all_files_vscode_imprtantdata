@@ -1,0 +1,30 @@
+  922  mkdir dbbackup
+  923  cd dbbackup/
+  924  ls
+  925  mkdir $(date --iso)
+  926  ls
+  927  
+  928  cd /root/dbbackup && mysql -e "show databases" | grep -v -E "^Database|information_schema|performance_schema|phpmyadmin" > dblist.txt
+  929  cat /root/dbbackup/dblist.txt | while read i; do mysqldump "$i" > /root/dbbackup/$(date --iso)/$i-db-bak-$(date +%F).sql; done
+  930  ls
+  931  du -sch *
+  932  cd 2023-07-20/
+  933  ls
+  934  du -sch *
+  935  cd ../
+  936  zip -r webserver6.dynaworx.com:2031-$(date --iso).zip $(date --iso)
+scp -P 3222 -r webserver6.dynaworx.com:2031-$(date --iso).zip root@belbackup.010-101.com:/home/backups/db_backups/webserver6.dynaworx.com:2031
+scp -P 3222 -r webserver6.dynaworx.com:2031-$(date --iso).zip root@belbackup.010-101.com:/home/backups/db_backups/webserver6.dynaworx.com:2031
+webserver1
+    cd backups_DB/
+  ls
+   pwd
+  cd /root/
+   ls
+   cd backups_DB/
+   ls
+   pwd
+   mkdir $(date --iso)
+  cd /root/backups_DB && mysql -e "show databases" | grep -v -E "^Database|information_schema|performance_schema|phpmyadmin" > dblist.txt
+  cat /root/backups_DB/dblist.txt | while read i; do mysqldump --no-tablespaces "$i" > "/root/backups_DB/$(date --iso)/$i-db-bak-$(date +%F).sql"; done
+ scp -P 3222 -r webserver1.dynaworx.com-$(date --iso).zip root@belbackup.010-101.com:/home/backups/db_backups/webserver1.dynaworx.com

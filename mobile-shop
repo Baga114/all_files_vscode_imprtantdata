@@ -1,0 +1,5 @@
+cd var/www/mobile-shop.clienturls.com
+sudo GIT_SSH_COMMAND='ssh -i /root/.ssh/attendance' git stash
+sudo GIT_SSH_COMMAND='ssh -i /root/.ssh/attendance' git pull origin main
+sudo chown -R clienturls.com psaserv var/www/mobile-shop.clienturls.com
+sudo chmod -R 755 var/www/mobile-shop.clienturls.com
