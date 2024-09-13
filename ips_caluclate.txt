@@ -1,0 +1,4 @@
+calculate ips
+
+To calculate the total number of IPs in a subnet, use 2^(32 - subnet bits). 
+For example, in 10.0.0.0/16, it's 2^(32 - 16) = 65,536 IPs. Subtract 2 for network and broadcast IPs, leaving 65,534 usable IPs (10.0.0.0 for network, 10.0.255.255 for broadcast).

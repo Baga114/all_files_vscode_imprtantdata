@@ -1,0 +1,89 @@
+To set up a proxy server on Ubuntu, you can use Squid, a popular open-source proxy server. Below are the steps to install and configure Squid on Ubuntu:
+
+1. Install Squid
+First, update your package lists and install Squid:
+
+bash
+Copy code
+sudo apt update
+sudo apt install squid -y
+
+2. Configure Squid
+After installing Squid, you need to configure it by editing the squid.conf file.
+
+bash
+Copy code
+sudo nano /etc/squid/squid.conf
+
+3. Basic Configuration Settings
+Here are some essential settings to configure in the squid.conf file:
+
+a. Set the Port
+By default, Squid listens on port 3128. You can change it if necessary:
+
+bash
+Copy code
+http_port 3128
+
+b. Allow Access
+By default, Squid only allows access from the localhost. If you want to allow access from specific IP addresses or subnets, you need to configure ACLs (Access Control Lists).
+
+For example, to allow access from the 192.168.1.0/24 subnet:
+
+bash
+Copy code
+acl localnet src 192.168.1.0/24
+http_access allow localnet
+To allow access from all IPs (not recommended for security reasons):
+
+bash
+Copy code
+http_access allow all
+Make sure you remove or comment out the following line to avoid blocking all traffic:
+
+bash
+Copy code
+http_access deny all
+
+c. Configure DNS
+Ensure Squid uses the correct DNS server. You can configure this by editing the resolv.conf file:
+
+bash
+Copy code
+sudo nano /etc/resolv.conf
+Add your DNS server:
+
+bash
+Copy code
+nameserver 8.8.8.8   # Example: Google DNS
+d. Configure Logging
+By default, Squid logs to /var/log/squid/access.log. You can configure the log format and rotation by editing the following lines in squid.conf:
+
+bash
+Copy code
+access_log /var/log/squid/access.log squid
+4. Restart Squid
+After making changes, restart the Squid service to apply the new configuration:
+
+bash
+Copy code
+sudo systemctl restart squid
+
+5. Enable Squid to Start on Boot
+To ensure Squid starts on system boot:
+
+bash
+Copy code
+sudo systemctl enable squid
+6. Firewall Configuration (Optional)
+If you have a firewall running, make sure to allow traffic on the Squid port (default 3128):
+
+bash
+Copy code
+sudo ufw allow 3128/tcp
+7. Testing the Proxy
+Test your proxy setup by using curl or configuring a browser to use your Squid proxy. Here's an example using curl:
+
+bash
+Copy code
+curl -x http://<your_server_ip>:3128 http://example.com

@@ -1,0 +1,22 @@
+1. Generate CSR
+below is the command 
+openssl req -new -newkey rsa:2048 -nodes -keyout yourdomain.key -out yourdomain.csr
+
+This will generate two files:
+
+yourdomain.key: The private key (keep this secure).
+yourdomain.csr: The CSR file that you'll provide to the CA.
+
+2. Submit CSR to the CA
+Once the CSR is generated, submit it to the CA when purchasing the SSL. The CA may also ask you to verify your domain ownership (by email or DNS record).
+below how you gonna add them
+ssl_certificate /etc/ssl/private/yourdomain.crt;
+ssl_certificate_key /etc/ssl/private/yourdomain.key;
+ssl_trusted_certificate /etc/ssl/privateca_bundle.crt;
+
+how to create bundle files
+so u r saying that i will get the bundle file from cv websites where i buy the ssl
+If the CA provides intermediate certificates separately, you may need to create a ca_bundle.crt by combining these intermediate certificates.
+Sometimes the CA provides a bundled file already
+
+ 
