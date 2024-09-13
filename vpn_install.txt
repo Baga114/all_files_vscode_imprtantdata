@@ -1,0 +1,11 @@
+https://www.cyberciti.biz/faq/ubuntu-18-04-lts-set-up-openvpn-server-in-5-minutes/ do to for creating file on server
+
+https://zacs-tech.com/how-to-install-openvpn-access-server-on-ubuntu-22-04/ this is for ui 
+
+this is the doc of load balancing
+https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwihxvSBvtOHAxUXp2YCHTDUEasYABAAGgJzbQ&ae=2&co=1&gclid=CjwKCAjw5Ky1BhAgEiwA5jGujooYvGFFpBNv9MCjzNcVlVMb27m1nv45JaEXY6w2jPEmnkjlu_y1UBoCmpQQAvD_BwE&ohost=www.google.com&cid=CAESVuD2OuwdTqZrsc6QprxPO0__Mph0tarPTIZ7JcQP04IKS7LsBHzccjciPezLhN5eCU8U0F9F7BA4XLARJ_sfDCzVUCrUwoHgDLlojVwL9pOj6XJmyIdW&sig=AOD64_3u5v9HGIQTpqPxDaEV8We2gP3m8w&q&adurl&ved=2ahUKEwjyv--BvtOHAxWnRmwGHcqnGPUQ0Qx6BAgUEAE
+
+sudo certbot --nginx -d goyourstatics.info --register-unsafely-without-email
+
+
+
